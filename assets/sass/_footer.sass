@@ -1,0 +1,98 @@
+@use 'variables' as *
+@use 'mixinsize' as *
+
+.site-footer
+    padding-block: 2rem
+    border-top: 3px solid $c-accent
+    background-color: #F3FAFB
+    
+    .branding-site-logo
+        height: 100%
+
+        .lg-img
+            min-width: max-content
+
+            img
+                width: 131.06px
+                height: 23px
+
+        a
+            border-bottom: 2px solid transparent
+            height: 100%
+
+            &:focus-visible
+                outline: none
+                border-color: $c-accent
+                
+            &:focus:not(:focus-visible)
+                outline: none
+
+        @media (max-width: 699px)
+            a
+                max-width: max-content
+                margin-inline: auto
+
+    .footer-ubication
+
+        >p
+            max-width: 420px
+
+        @media (max-width: 699px)
+            >p,
+            >div
+                text-align: center
+
+            >div
+                margin-top: 16px
+
+            >p
+                margin-inline: auto
+
+        
+        @media (min-width: 700px)
+            display: flex
+
+            >div
+                margin-left: auto
+
+                p
+                    text-align: right
+
+    .footer-legal
+        padding-top: 24px
+        border-top: 1px solid $border
+        color: #62636C
+
+        @media (max-width: 699px)
+
+            p
+                margin-top: 24px
+                text-align: center
+
+            ul
+                margin-inline: auto
+                max-width: 295.227px
+        
+        @media (min-width: 700px)
+            display: flex
+            align-items: center
+
+            p
+                margin-left: auto
+                min-width: max-content
+                padding-left: 1rem
+
+        li:nth-of-type(n+2)
+            margin-left: 1rem
+
+        .c-settings
+            height: auto
+            padding: 0
+            background-color: transparent
+            margin-left: 1rem
+            color: #62636C
+
+        a,.c-settings
+            white-space: nowrap
+            &:hover
+                text-decoration: underline
