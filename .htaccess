@@ -1,0 +1,54 @@
+# Activar el motor de reescritura
+RewriteEngine On
+
+# 1. Redirigir a HTTPS y forzar www en el dominio
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+# 2. Eliminar extensiones .html de las URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+RewriteCond %{REQUEST_URI} !\.html$
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ /$1 [R=301,L]
+
+# 3. Configurar páginas personalizadas de error
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# 4. Habilitar compresión GZIP
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
+    AddOutputFilterByType DEFLATE application/x-javascript text/javascript application/x-httpd-php
+</IfModule>
+
+# 5. Configurar caché para archivos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+</IfModule>
+
+# 6. Proteger archivos sensibles
+<FilesMatch "(\.htaccess|\.htpasswd|\.env|\.ini)">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# 7. Configuración de tipos MIME
+AddType application/javascript .js
+AddType text/css .css
+AddType application/font-woff2 .woff2
+AddType application/font-woff .woff

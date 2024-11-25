@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Página principal -->
+    <url>
+        <loc>https://www.lidenor.es/</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>1.0</priority>
+        <changefreq>daily</changefreq>
+    </url>
+
+    <!-- Páginas de contenido -->
+    <url>
+        <loc>https://www.lidenor.es/acerca-de-lidenor</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/sectores</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/limpieza-profesional-textil</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/desinfeccion-especializada-textil</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/ignifugado-profesional-textil</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/descontaminacion-de-espacios</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+
+    <!-- Páginas legales -->
+    <url>
+        <loc>https://www.lidenor.es/aviso-legal</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/privacidad</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/cookies</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/terminos-y-condiciones</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.6</priority>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <!-- Páginas técnicas -->
+    <url>
+        <loc>https://www.lidenor.es/certificaciones</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/contacto</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+
+    <!-- Páginas de error -->
+    <url>
+        <loc>https://www.lidenor.es/404</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.1</priority>
+        <changefreq>never</changefreq>
+    </url>
+    <url>
+        <loc>https://www.lidenor.es/500</loc>
+        <lastmod>2024-11-28</lastmod>
+        <priority>0.1</priority>
+        <changefreq>never</changefreq>
+    </url>
+</urlset>
