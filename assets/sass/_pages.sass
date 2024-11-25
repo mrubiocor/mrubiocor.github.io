@@ -1,0 +1,727 @@
+@use 'variables' as *
+@use 'mixinsize' as *
+
+// -----------------------------------------------------------------------------
+// Heros
+// -----------------------------------------------------------------------------
+
+.hero-home
+    position: relative
+
+    &.mt65
+        @media (min-width: 1401px)
+            margin-top: 65px
+
+    [class*="picture-hero-"]
+        inset: 0
+        z-index: -1
+
+        img
+            height: 100%
+            border-radius: 0
+
+        &::before
+            position: absolute
+            inset: 0
+            content: ""
+            background-color: #1E1F24
+            opacity: .5
+
+    .picture-hero-home
+        img
+            object-position: center 70%
+        
+    .subhero
+        z-index: 1
+
+        @media (max-width: 1400px)
+            padding-block: 3rem
+
+        @media (min-width: 1401px)
+            padding-block: 5rem
+
+        >div
+            max-width: 950px
+            color: $c-white
+
+        .btn-c-white
+            @media (min-width: 899px)
+                max-width: max-content
+
+.hero-about-us // Degradado de color
+    position: relative
+    background-color: $c-white
+
+    .content
+        z-index: 2
+
+        @media (max-width: 1400px)
+            padding-block: 3rem
+
+        @media (min-width: 1401px)
+            padding-block: 5rem
+
+        h1
+            z-index: 2
+            color: #234042
+
+        p
+            z-index: 2
+            max-width: 950px
+
+    .bk-image::after
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        z-index: 1
+        content: ""
+        @include size(100%)
+        background-image: linear-gradient(to bottom, #d2f0f2, transparent)
+
+.hero-legal
+    padding-block: 4rem
+
+    h1
+        color: #234042
+        padding-bottom: 24px
+        border-bottom: 1px solid #D8D9E0
+
+    >p:first-of-type,
+    h2,
+    h3
+        color: #234042
+
+
+// -----------------------------------------------------------------------------
+// Home-....
+// -----------------------------------------------------------------------------
+
+[class*="home-"]
+    padding-block: 4rem
+
+    &.pdt0
+        padding-top: 0
+
+    h2,>p,
+    .outer >p
+        max-width: 950px
+
+    h2,
+    h3,
+    h1.h2
+        color: #234042
+
+.home-4
+
+    &:not(.white)
+        background-color: #F3FAFB
+
+    @media (max-width: 699px)
+        .split-content
+
+            >div:last-of-type
+                margin-top: 1rem
+
+    @media (min-width: 700px)
+        .split-content
+            display: flex
+
+            >div
+                width: 50%
+
+                &:last-of-type
+                    margin-left: 1rem
+
+        fieldset
+            display: flex
+
+            >div
+                width: 50%
+
+            >div:nth-of-type(n+2)
+                margin-left: 1rem
+
+    fieldset
+
+        legend
+            width: 100%
+            color: #234042
+            border-bottom: 3px solid #234042
+
+
+    .box-legal
+        padding: 1rem
+        border: 1px solid #D8D9E0
+        height: max-content
+
+        >div
+            word-break: break-all
+
+            input[type="checkbox"]
+                @include size(14px)
+                min-width: 14px
+
+            label
+                width: 90%
+                margin-left: .5rem
+            
+            label,a
+                display: inline-block
+
+        .btn-send
+            pointer-events: none
+
+        #privacy:checked ~ .btn-send
+            color: $c-white
+            background-color: #317378
+            pointer-events: auto
+
+            &:hover,
+            &:focus-visible
+                background-color: #234042
+
+
+    // Diseño de input, etc
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select
+        height: 50px
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select
+        width: 100%
+        padding-inline: 1rem
+        background-color: $c-white
+        border: 1px solid #D8D9E0
+
+        &:hover
+            background-color: #EFF0F3
+
+        &:focus-visible,
+        &:focus
+            outline: 2px solid $c-accent
+            border-bottom: none
+        
+        &:focus:not(:focus-visible)
+            outline: none
+
+        &::placeholder
+            color: #62636C
+
+    textarea
+        resize: none
+        font-family: $family-sans-serif
+        line-height: 1.4
+        padding: 1rem
+
+    select
+        appearance: none
+        background-image: url('/assets/images/icons/down.svg')
+        background-repeat: no-repeat
+        background-size: 14px
+        background-position: center right 1rem
+
+        &::-ms-expand // Elimina la flecha para las versiones inferiores de IE
+            display: none
+
+.home-call-us
+
+    &.pdt0
+        padding-top: 0
+
+    >div
+        background-color: #F3FAFB
+        border: 1px solid #D2F0F2
+        border-radius: 4px
+        
+        @media (max-width: 766px)
+            padding: 2rem 1rem
+        
+        @media (min-width: 767px)
+            padding: 3rem
+
+        >p
+            max-width: 650px
+
+        >div
+            @media (max-width: 699px)
+                a
+                    margin-top: 24px
+            
+            @media (min-width: 700px)
+                display: flex
+                align-items: center
+
+                a
+                    margin-left: auto
+
+    >p
+        color: #62636C
+        min-width: 100%
+        
+.home-services-2
+    .big-cards
+
+        @media only screen and (min-width: 740px) and (max-width: 1079px) // Mobile 412px
+            max-width: 700px
+            margin-inline: auto
+
+        @media (min-width: 1080px)
+            display: flex
+
+    [class*="big-card-"]
+
+        @media (max-width: 1079px)
+
+            picture,
+            img
+                height: 300px
+                max-height: 300px
+                border-radius: 4px 4px 0 0
+
+            picture::before
+                border-radius: 4px 4px 0 0
+
+        @media (min-width: 1080px)
+            width: 50%
+
+            &:last-of-type
+                margin-left: 1rem
+
+            picture,img
+                height: 440px
+                min-height: 100%
+                border-radius: 4px 0 0 4px
+
+            picture::before
+                border-radius: 4px 0 0 4px
+
+        picture::before
+            position: absolute
+            inset: 0
+            content: ""
+            background-color: #1E1F24
+            opacity: .7
+
+        div
+            position: absolute
+            inset: 0
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            text-align: center
+            padding: 1rem
+
+            h3,p
+                color: #fff
+
+            h3
+                max-width: 410px
+
+            p
+                max-width: 510px
+
+    .content
+        background-color: #E3F6F8
+
+        @media (max-width: 1079px)
+            padding: 2rem 1rem
+            border-radius: 0 0 4px 4px
+
+        @media (min-width: 1080px)
+            width: 50%
+            padding: 2rem
+            border-radius: 0 4px 4px 0
+
+
+// -----------------------------------------------------------------------------
+// Servicios
+// -----------------------------------------------------------------------------
+
+.services
+
+    .cards
+        @media (min-width: 1300px)
+            display: flex
+
+    .link-cards
+
+        >a
+            padding: 1rem
+            background-color: #FAFEFE
+            border: 1px solid #C0E7EA
+            border-radius: 4px
+
+            &:hover,
+            &:focus-visible
+                border-color: #92CACE
+                
+                h3
+                    text-decoration: underline
+
+            &:focus-visible,
+            &:focus:not(:focus-visible)
+                outline: none
+            
+        @media (max-width: 699px)
+
+            >a:nth-of-type(n+2)
+                margin-top: 1rem  
+
+            picture,img
+                height: 150px
+
+        @media (min-width: 700px)
+            display: flex
+
+            a
+                width: 50%
+
+            >a:last-of-type
+                margin-left: 1rem  
+            
+            picture,img
+                height: 200px
+        
+        @media only screen and (min-width: 700px) and (max-width: 1299px)
+            &:last-of-type
+                margin-top: 1rem
+
+        @media (min-width: 1300px)
+            width: 50%
+            
+            &:last-of-type
+                margin-left: 1rem
+
+            h3
+                height: 46.8px
+            
+    .btn-c-accent
+        margin-inline: auto   
+
+
+// -----------------------------------------------------------------------------
+// Sectores
+// -----------------------------------------------------------------------------
+
+.sectors
+    .big-cards
+        @media (min-width: 700px)
+            display: flex
+
+    [class*="big-card-"]
+        position: relative
+        border-radius: 4px
+
+        @media (max-width: 699px)
+            &:last-of-type
+                margin-top: 1rem
+
+            picture,
+            img
+                height: 300px
+                max-height: 300px
+
+        @media (min-width: 700px)
+            width: 50%
+
+            &:last-of-type
+                margin-left: 1rem
+
+            picture,img
+                height: 400px
+                max-height: 400px
+        
+        picture
+            position: relative
+
+            &::before
+                content: ""
+                position: absolute
+                inset: 0
+                background-color: #1E1F24
+                opacity: .7
+                border-radius: 4px
+
+        div
+            position: absolute
+            inset: 0
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            text-align: center
+            padding: 1rem
+
+            h3,p
+                color: #fff
+
+            h3
+                max-width: 410px
+
+            p
+                max-width: 510px
+
+
+// -----------------------------------------------------------------------------
+// Nuestros valores
+// -----------------------------------------------------------------------------
+
+.our-values
+
+    .x2
+
+        >div
+            background-color: #F3FAFB
+            border-radius: 4px
+
+
+    @media (max-width: 766px)
+        .x2
+            >div
+                padding: 1rem
+
+                &:last-of-type
+                    margin-top: 1rem
+
+    @media (min-width: 767px)
+        .x2
+            display: flex
+
+            >div
+                width: 50%
+                padding: 2rem
+
+                &:last-of-type
+                    margin-left: 1rem
+
+
+
+// -----------------------------------------------------------------------------
+// Nuestros servicios
+// -----------------------------------------------------------------------------
+
+.our-services
+
+    @media (max-width: 766px)
+
+        .service-1,
+        .service-2
+            display: flex
+            flex-direction: column
+
+            picture
+                // margin-top: 2.5rem
+                order: -1
+                margin-bottom: 2.5rem
+    
+    @media (max-width: 1079px)
+        picture
+            height: 300px
+            img
+                height: 300px
+
+    @media (min-width: 767px)
+
+        .service-2
+            picture
+                order: -1
+
+    @media only screen and (min-width: 767px) and (max-width: 1080px)
+
+        [class*="service-"]
+
+            display: flex
+            align-items: center
+
+            >div
+                width: 50%
+
+            picture
+                width: 50%
+
+                height: 440px
+                img
+                    height: 440px
+
+        .service-1
+            picture
+                margin-left: 2.5rem
+
+        .service-2
+            picture
+                margin-right: 2.5rem
+
+    @media (min-width: 1081px)
+
+        [class*="service-"]
+
+            display: flex
+            align-items: center
+
+            >div
+                width: 60%
+
+            picture
+                width: 40%
+                height: 400px
+
+                img
+                    height: 400px
+
+        .service-1
+            picture
+                margin-left: 4rem
+
+        .service-2
+            picture
+                margin-right: 4rem
+
+
+// -----------------------------------------------------------------------------
+// División de 3 cards
+// -----------------------------------------------------------------------------  
+
+.x3-bars
+    p.mt48
+        color: #276A6F
+
+    .why
+        div:nth-of-type(2)
+
+            &::before,
+            &::after
+                position: absolute
+                content: ""
+                // background-color: #92CACE // Verde
+                background-color: #D8D9E0 // Gris
+
+        @media (max-width: 1000px)
+            div:nth-of-type(2)
+                margin-block: 2rem
+                padding-block: 2rem
+
+                &::before,
+                &::after
+                    left: 0
+                    right: 0
+                    width: 100%
+                    height: 3px
+
+                &::before
+                    top: 0
+
+                &::after
+                    bottom: 0
+        
+        @media (min-width: 1001px)
+            display: flex
+
+            div
+                width: 33.33%
+
+            div:nth-of-type(2)
+                margin-inline: 2rem
+                padding-inline: 2rem
+
+                &::before,
+                &::after
+                    top: 0
+                    bottom: 0
+                    width: 3px
+                    height: 100%
+
+                &::before
+                    left: 0
+
+                &::after
+                    right: 0
+
+
+
+// -----------------------------------------------------------------------------
+// Contenido con cards destacadas
+// -----------------------------------------------------------------------------
+
+.featured-side-content
+    .featured-data
+
+        .right-bottom
+            background-color: #E3F6F8
+            border-radius: 4px
+
+            p.fw-6
+                color: #234042
+        
+        @media (max-width: 899px)
+            .right-bottom
+                margin-top: 24px
+
+        @media (min-width: 900px)
+            display: flex
+            align-items: center
+
+            .left-top
+                width: 60%
+
+            .right-bottom
+                width: 40%
+
+        @media only screen and (min-width: 320px) and (max-width: 1080px) // Mobile 412px
+            .right-bottom
+                padding: 1rem
+
+        @media only screen and (min-width: 900px) and (max-width: 1080px) // Mobile 412px
+            .right-bottom
+                margin-left: 2rem
+
+        @media (min-width: 1081px)
+            .right-bottom
+                padding: 2rem
+                margin-left: 4rem
+
+    
+// -----------------------------------------------------------------------------
+// Preguntas frecuentes
+// -----------------------------------------------------------------------------
+          
+.faqs
+
+    .box-faq
+        padding-block: 3rem
+        border-top: 1px solid $border
+
+        &:last-of-type
+            border-bottom: 1px solid $border
+
+    // details
+    /* Estilo básico para el summary */
+    details summary 
+        cursor: pointer
+        list-style: none
+        padding-right: 3rem
+    
+    /* Icono de menos (-) por defecto */
+    details[open] summary::after
+        content: "-"
+        position: absolute
+        right: 0
+        top: 0
+        color: #234042
+        
+    /* Icono de más (+) cuando está colapsado */
+    details summary::after
+        content: "+"
+        position: absolute
+        right: 0
+        top: 0
+        color: #234042
+
+

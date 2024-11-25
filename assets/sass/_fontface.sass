@@ -1,0 +1,26 @@
+@use 'variables' as *
+
+  
+// -----------------------------------------------------------------------------
+// Font Face
+// -----------------------------------------------------------------------------
+// String Replace
+// -----------------------------------------------------------------------------
+
+@mixin font-face($name, $path, $weight: null, $style: normal, $exts: woff2 woff ttf)
+  @font-face
+    font-family: "#{$name}"
+    font-style: $style
+    font-weight: $weight
+    font-display: swap
+
+    // Construcción de `src` directamente con cada tipo de fuente.
+    src: 
+      url:("#{$path}.woff2") format("woff2"),
+      url:("#{$path}.woff") format("woff"),
+      url:("#{$path}.ttf") format("truetype")
+
+
+
+
+
